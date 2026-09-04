@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About — बगीचा ब्लॉक पोर्टल">
+  <title>About | बगीचा ब्लॉक पोर्टल</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/language-style.css">
+  <link rel="stylesheet" href="../css/auth-style.css">
+</head>
+<body class="simple-page">
+
+<header class="top">
+  <div class="top-inner">
+    <div class="brand"><img src="../images/logo.svg" alt="बगीचा ब्लॉक" class="brand-mark" width="34" height="34"> बगीचा ब्लॉक पोर्टल</div>
+
+    <button class="menu-toggle" id="menuToggle" type="button" aria-label="मेनू खोलें" aria-expanded="false" aria-controls="mainNav">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="main-nav" id="mainNav">
+      <div class="nav-actions">
+        <div class="language-selector" id="languageSelector">
+          <button class="language-button" id="languageButton" type="button" aria-expanded="false" aria-haspopup="true">
+            🌐
+            <span id="currentLanguage">हिंदी</span>
+            ▾
+          </button>
+          <div class="language-menu" id="languageMenu">
+            <button type="button" data-language="hindi">हिंदी</button>
+            <button type="button" data-language="hinglish">Hinglish</button>
+            <button type="button" data-language="english">English</button>
+            <button type="button" data-language="kurukh">कुड़ुख</button>
+            <button type="button" data-language="sadri">सादरी</button>
+            <button type="button" data-language="nagpuri">नागपुरी</button>
+            <button type="button" data-language="chhattisgarhi">छत्तीसगढ़ी</button>
+          </div>
+        </div>
+        <div class="auth-area" data-auth></div>
+      </div>
+      <div class="nav-links">
+        <a class="nav-link simple-home" href="../index.html" aria-label="होम पर वापस जाएँ" data-i18n="back_home">← होम</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main class="info-page">
+
+<section class="info-hero">
+  <span class="kicker" data-i18n="about_kicker">हमारे बारे में</span>
+  <h1 data-i18n="about_title">बगीचा ब्लॉक पोर्टल</h1>
+  <p data-i18n="about_desc">बगीचा ब्लॉक की पंचायत, स्थानीय सेवाओं, बाज़ार, समाचार और सरकारी जानकारी को एक जगह उपलब्ध कराने के लिए बनाया जा रहा community portal.</p>
+  <span class="status-coming" data-i18n="about_phase">Development Phase · Coming Soon</span>
+</section>
+
+<section class="info-grid">
+  <article class="info-card">
+    <h2 data-i18n="about_goal">हमारा उद्देश्य</h2>
+    <p data-i18n="about_goal_desc">स्थानीय नागरिकों के लिए जरूरी जानकारी को आसान, मोबाइल-friendly और एक ही जगह उपलब्ध कराना।</p>
+  </article>
+  <article class="info-card">
+    <h2 data-i18n="about_available">अभी क्या उपलब्ध है?</h2>
+    <p data-i18n="about_available_desc">पंचायत directory और पंचायत detail pages का development जारी है। बाकी major services धीरे-धीरे जोड़ी जा रही हैं।</p>
+  </article>
+  <article class="info-card">
+    <h2 data-i18n="about_info_status">जानकारी की स्थिति</h2>
+    <p data-i18n="about_info_status_desc">जहाँ verified data अभी उपलब्ध नहीं है, वहाँ fake information की जगह Coming Soon दिखाया गया है।</p>
+  </article>
+</section>
+
+</main>
+
+<footer>
+  <strong data-i18n="brand_name">बगीचा ब्लॉक पोर्टल</strong>
+  <div class="site-footer-links" aria-label="सहायता और जानकारी">
+    <a href="../index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="feedback.html">Feedback</a>
+  </div>
+</footer>
+
+<script src="../js/paths.js"></script>
+<script src="../js/script.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/language.js"></script>
+</body>
+</html>

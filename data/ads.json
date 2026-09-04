@@ -1,0 +1,14 @@
+{
+  "ads": [
+    {
+      "image": "images/ad-1.png",
+      "alt": "विज्ञापन 1",
+      "link": "#"
+    },
+    {
+      "image": "images/ad-2.png",
+      "alt": "विज्ञापन 2",
+      "link": "#"
+    }
+  ]
+}

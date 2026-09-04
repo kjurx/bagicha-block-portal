@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>बगीचा ब्लॉक | जशपुर, छत्तीसगढ़</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/ad-style.css">
+  <link rel="stylesheet" href="css/language-style.css">
+  <link rel="stylesheet" href="css/auth-style.css">
+</head>
+
+<body>
+
+  <!-- ===============================
+       HEADER
+  ================================ -->
+
+  <header class="top">
+
+    <div class="top-inner">
+
+      <!-- Brand -->
+      <div class="brand">
+        <img src="images/logo.svg" alt="बगीचा ब्लॉक" class="brand-mark" width="34" height="34">
+        बगीचा ब्लॉक पोर्टल
+      </div>
+
+
+      <!-- Mobile Menu Button -->
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-label="मेनू खोलें"
+        aria-expanded="false"
+        aria-controls="mainNav"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+
+      <!-- Main Navigation -->
+      <nav class="main-nav" id="mainNav">
+
+        <!-- Language + Auth (fold into mobile menu, sit right on desktop) -->
+        <div class="nav-actions">
+
+          <div class="language-selector" id="languageSelector">
+
+            <button
+              class="language-button"
+              id="languageButton"
+              type="button"
+              aria-expanded="false"
+              aria-haspopup="true"
+            >
+              🌐
+              <span id="currentLanguage">हिंदी</span>
+              ▾
+            </button>
+
+            <div class="language-menu" id="languageMenu">
+
+              <button type="button" data-language="hindi">हिंदी</button>
+              <button type="button" data-language="hinglish">Hinglish</button>
+              <button type="button" data-language="english">English</button>
+              <button type="button" data-language="kurukh">कुड़ुख</button>
+              <button type="button" data-language="sadri">सादरी</button>
+              <button type="button" data-language="nagpuri">नागपुरी</button>
+              <button type="button" data-language="chhattisgarhi">छत्तीसगढ़ी</button>
+
+            </div>
+
+          </div>
+
+          <div class="auth-area" data-auth></div>
+
+        </div>
+
+
+        <!-- Nav Links -->
+        <div class="nav-links">
+
+          <a href="#panchayats" class="nav-link" data-i18n="panchayat">
+            पंचायत निर्देशिका
+          </a>
+
+          <a href="#emergency" class="nav-link" data-i18n="emergency">
+            आपातकालीन सेवाएँ
+          </a>
+
+          <a href="#market" class="nav-link" data-i18n="market">
+            बाज़ार
+          </a>
+
+          <a href="#news" class="nav-link" data-i18n="news">
+            समाचार
+          </a>
+
+          <a href="#schemes" class="nav-link" data-i18n="schemes">
+            योजनाएँ
+          </a>
+
+        </div>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+  <!-- ===============================
+       HERO
+  ================================ -->
+
+  <section
+    class="hero"
+  >
+
+    <div class="hero-inner">
+
+      <div>
+
+        <!-- Hero Eyebrow -->
+        <span
+          class="eyebrow"
+          data-i18n="hero_eyebrow"
+        >
+          जशपुर जिला · छत्तीसगढ़
+        </span>
+
+
+        <!-- Hero Title -->
+        <h1 data-i18n="hero_title">
+          बगीचा ब्लॉक की हर ज़रूरी जानकारी, एक ही जगह
+        </h1>
+
+
+        <!-- Hero Description -->
+        <p
+          class="lede"
+          data-i18n="hero_description"
+        >
+          136 पंचायतों की निर्देशिका, आपातकालीन नंबर,
+          स्थानीय बाज़ार, ताज़ा खबरें और सरकारी योजनाएँ —
+          बगीचा ब्लॉक के हर नागरिक के लिए बनाया गया
+          एक सामुदायिक पोर्टल।
+        </p>
+
+
+        <!-- Hero Buttons -->
+        <div class="hero-ctas">
+
+          <a
+            href="#panchayats"
+            class="btn btn-primary"
+            data-i18n="find_panchayat"
+          >
+            पंचायत खोजें
+          </a>
+
+          <a
+            href="#emergency"
+            class="btn btn-ghost"
+            data-i18n="emergency_number"
+          >
+            आपातकालीन नंबर
+          </a>
+
+          <a
+            href="#market"
+            class="btn btn-ghost"
+          >
+            बाजार
+          </a>
+
+        </div>
+
+
+        <!-- Hero Meta -->
+        <div class="hero-meta">
+
+          <span>136 पंचायतें</span>
+
+          <span>बगीचा ब्लॉक</span>
+
+          <span>जशपुर ज़िला</span>
+
+          <span>छत्तीसगढ़</span>
+
+          <span>पिन कोड 496224</span>
+
+        </div>
+
+      </div>
+
+
+      <!-- ===============================
+           AD SLIDER
+      ================================ -->
+
+      <div
+        class="ad-banner-slot ad-slider"
+        id="adBannerSlot"
+      >
+
+        <div
+          class="ad-slides"
+          id="adSlides"
+        ></div>
+
+
+        <button
+          class="ad-prev"
+          id="adPrev"
+          aria-label="पिछला विज्ञापन"
+          data-i18n-aria="ad_prev_label"
+        >
+          ‹
+        </button>
+
+
+        <button
+          class="ad-next"
+          id="adNext"
+          aria-label="अगला विज्ञापन"
+          data-i18n-aria="ad_next_label"
+        >
+          ›
+        </button>
+
+
+        <div
+          class="ad-dots"
+          id="adDots"
+        ></div>
+
+
+        <div
+          class="ad-banner-fallback"
+          id="adBannerFallback"
+        >
+
+          <span class="ad-banner-title">
+            यहाँ आपका विज्ञापन दिखेगा
+          </span>
+
+          <span class="ad-banner-hint">
+            विज्ञापन Coming Soon
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ===============================
+       EMERGENCY
+  ================================ -->
+
+  <section id="emergency">
+
+    <div class="section-head">
+
+      <span class="kicker" data-i18n="emergency_kicker">
+        तुरंत सम्पर्क
+      </span>
+
+      <h2 data-i18n="emergency_heading">
+        आपातकालीन सेवाएँ
+      </h2>
+
+      <p data-i18n="emergency_desc">
+        आधिकारिक आपातकालीन संपर्क जानकारी जल्द उपलब्ध होगी。
+      </p>
+
+    </div>
+
+
+    <div class="card-grid">
+
+      <div class="card brick">
+
+        <h3>
+          सामुदायिक स्वास्थ्य केंद्र, बगीचा
+        </h3>
+
+        <p>
+          आधिकारिक संपर्क जानकारी जल्द उपलब्ध होगी।
+        </p>
+
+        <span class="placeholder-tag">
+          Coming Soon
+        </span>
+
+      </div>
+
+
+      <div class="card brick">
+
+        <h3>
+          थाना बगीचा
+        </h3>
+
+        <p>
+          आधिकारिक पुलिस संपर्क जानकारी जल्द उपलब्ध होगी।
+        </p>
+
+        <span class="placeholder-tag">
+          Coming Soon
+        </span>
+
+      </div>
+
+
+      <div class="card brick">
+
+        <h3>
+          फायर ब्रिगेड
+        </h3>
+
+        <p>
+          आधिकारिक फायर ब्रिगेड संपर्क जानकारी जल्द उपलब्ध होगी।
+        </p>
+
+        <span class="placeholder-tag">
+          Coming Soon
+        </span>
+
+      </div>
+
+
+      <div class="card brick">
+
+        <h3>
+          जनपद पंचायत बगीचा
+        </h3>
+
+        <p>
+          आधिकारिक कार्यालय संपर्क जानकारी जल्द उपलब्ध होगी।
+        </p>
+
+        <span class="placeholder-tag">
+          Coming Soon
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <div class="fill-banner">
+
+      आपातकालीन जानकारी सत्यापित होने के बाद इस सेक्शन में
+      आधिकारिक नाम, पता और संपर्क नंबर जोड़े जाएंगे।
+
+    </div>
+
+  </section>
+
+
+  <!-- ===============================
+       MARKET
+  ================================ -->
+
+  <section id="market">
+
+    <div class="section-head">
+
+      <span class="kicker" data-i18n="market_kicker">
+        स्थानीय व्यापार
+      </span>
+
+      <h2 data-i18n="market_heading">
+        बाज़ार और दुकानें
+      </h2>
+
+      <p data-i18n="market_desc">
+        बगीचा बाज़ार के दुकानदार, खाद-बीज विक्रेता,
+        मोबाइल रिपेयरिंग और ट्रांसपोर्ट सेवाएँ。
+      </p>
+
+    </div>
+
+
+    <div class="card-grid">
+
+      <div class="card marigold">
+
+        <h3>
+          खाद-बीज भंडार
+        </h3>
+
+        <p>
+          दुकान का नाम, पता, फोन
+        </p>
+
+        <span class="placeholder-tag">
+          Coming Soon
+        </span>
+
+      </div>
+
+
+      <div class="card marigold">
+
+        <h3>
+          मोबाइल रिपेयरिंग
+        </h3>
+
+        <p>
+          दुकान का नाम, पता, फोन
+        </p>
+
+        <span class="placeholder-tag">
+          Coming Soon
+        </span>
+
+      </div>
+
+
+      <div class="card marigold">
+
+        <h3>
+          टैक्सी / कार बुकिंग सेवा
+        </h3>
+
+        <p>
+          चालक का नाम, गाड़ी नंबर, फोन
+        </p>
+
+        <span class="placeholder-tag">
+          Coming Soon
+        </span>
+
+      </div>
+
+
+      <div class="card marigold">
+
+        <h3>
+          किराना दुकान
+        </h3>
+
+        <p>
+          दुकान का नाम, पता, फोन
+        </p>
+
+        <span class="placeholder-tag">
+          Coming Soon
+        </span>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ===============================
+       NEWS
+  ================================ -->
+
+  <section id="news">
+
+    <div class="section-head">
+
+      <span class="kicker" data-i18n="news_kicker">
+        ताज़ा जानकारी
+      </span>
+
+      <h2 data-i18n="news_heading">
+        स्थानीय समाचार व कार्यक्रम
+      </h2>
+
+      <p data-i18n="news_desc">
+        पंचायत बैठकें, स्थानीय आयोजन और ब्लॉक की
+        स्थानीय समाचार सेवा Coming Soon
+      </p>
+
+    </div>
+
+
+    <div class="card-grid">
+
+      <div class="card">
+
+        <h3>
+          Coming Soon
+        </h3>
+
+        <p>
+          समाचार/कार्यक्रम का संक्षिप्त विवरण
+        </p>
+
+        <span class="placeholder-tag">
+          Coming Soon
+        </span>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>
+          Coming Soon
+        </h3>
+
+        <p>
+          समाचार/कार्यक्रम का संक्षिप्त विवरण
+        </p>
+
+        <span class="placeholder-tag">
+          Coming Soon
+        </span>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>
+          Coming Soon
+        </h3>
+
+        <p>
+          समाचार/कार्यक्रम का संक्षिप्त विवरण
+        </p>
+
+        <span class="placeholder-tag">
+          Coming Soon
+        </span>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ===============================
+       SCHEMES
+  ================================ -->
+
+  <section id="schemes">
+
+    <div class="section-head">
+
+      <span class="kicker" data-i18n="schemes_kicker">
+        किसान व नागरिक सहायता
+      </span>
+
+      <h2 data-i18n="schemes_heading">
+        सरकारी योजनाएँ
+      </h2>
+
+      <p data-i18n="schemes_desc">
+        छत्तीसगढ़ सरकार की योजनाएँ, मंडी भाव और कृषि सलाह —
+        सरल हिंदी में।
+      </p>
+
+    </div>
+
+
+    <div class="card-grid">
+
+      <div class="card">
+
+        <h3>
+          कृषि सलाह
+        </h3>
+
+        <p>
+          खेती सुझाव — Coming Soon
+        </p>
+
+        <span class="placeholder-tag">
+          Coming Soon
+        </span>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>
+          मंडी भाव
+        </h3>
+
+        <p>
+          बाज़ार के ताज़ा दाम — Coming Soon
+        </p>
+
+        <span class="placeholder-tag">
+          Coming Soon
+        </span>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>
+          सरकारी योजना
+        </h3>
+
+        <p>
+          सरकारी योजना की जानकारी — Coming Soon
+        </p>
+
+        <span class="placeholder-tag">
+          Coming Soon
+        </span>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ===============================
+       PANCHAYAT DIRECTORY
+  ================================ -->
+
+  <section id="panchayats">
+
+    <div class="section-head">
+
+      <span class="kicker" data-i18n="panchayat_kicker">
+        पंचायत पंजी
+      </span>
+
+      <h2 data-i18n="panchayat_heading">
+        पंचायत निर्देशिका
+      </h2>
+
+      <p data-i18n="panchayat_desc">
+        नीचे नाम टाइप करके अपनी पंचायत खोजें।
+        यह सूची बगीचा ब्लॉक के आधिकारिक क्रम पर आधारित है।
+      </p>
+
+    </div>
+
+
+    <div class="ledger-wrap">
+
+      <div class="ledger-controls">
+
+        <input
+          type="text"
+          id="panchayatSearch"
+          placeholder="पंचायत का नाम लिखें... (उदाहरण: Bhitghara)"
+          aria-label="पंचायत खोजें"
+        >
+
+        <span
+          class="ledger-count"
+          id="ledgerCount"
+        >
+          136 पंचायत
+        </span>
+
+      </div>
+
+
+      <div
+        class="ledger-grid"
+        id="ledgerGrid"
+      ></div>
+
+    </div>
+
+  </section>
+
+
+  </main>
+
+
+  <!-- ===============================
+       FOOTER
+  ================================ -->
+
+  <footer>
+
+    <strong>
+      बगीचा ब्लॉक पोर्टल
+    </strong>
+
+    — जशपुर जिला, छत्तीसगढ़ के नागरिकों के लिए
+
+    <br>
+
+    यह एक शुरुआती (starter) वेबसाइट है।
+    असली संपर्क नंबर, दुकान और समाचार की जानकारी
+    नंबर जोड़ दी जाएगी।
+
+    <div class="site-footer-links" aria-label="सहायता और जानकारी">
+      <a href="pages/about.html">About</a>
+      <a href="pages/contact.html">Contact</a>
+      <a href="pages/feedback.html">Feedback</a>
+    </div>
+
+  </footer>
+
+
+  <!-- ===============================
+       JAVASCRIPT
+  ================================ -->
+
+  <script src="js/paths.js"></script>
+
+  <script src="js/script.js"></script>
+
+  <script src="js/ad-script.js"></script>
+
+  <script src="js/language.js"></script>
+
+  <script src="js/auth.js"></script>
+
+</body>
+
+</html>

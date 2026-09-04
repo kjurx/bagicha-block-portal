@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact — बगीचा ब्लॉक पोर्टल">
+  <title>Contact | बगीचा ब्लॉक पोर्टल</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/language-style.css">
+  <link rel="stylesheet" href="../css/auth-style.css">
+</head>
+<body class="simple-page">
+
+<header class="top">
+  <div class="top-inner">
+    <div class="brand"><img src="../images/logo.svg" alt="बगीचा ब्लॉक" class="brand-mark" width="34" height="34"> बगीचा ब्लॉक पोर्टल</div>
+
+    <button class="menu-toggle" id="menuToggle" type="button" aria-label="मेनू खोलें" aria-expanded="false" aria-controls="mainNav">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="main-nav" id="mainNav">
+      <div class="nav-actions">
+        <div class="language-selector" id="languageSelector">
+          <button class="language-button" id="languageButton" type="button" aria-expanded="false" aria-haspopup="true">
+            🌐
+            <span id="currentLanguage">हिंदी</span>
+            ▾
+          </button>
+          <div class="language-menu" id="languageMenu">
+            <button type="button" data-language="hindi">हिंदी</button>
+            <button type="button" data-language="hinglish">Hinglish</button>
+            <button type="button" data-language="english">English</button>
+            <button type="button" data-language="kurukh">कुड़ुख</button>
+            <button type="button" data-language="sadri">सादरी</button>
+            <button type="button" data-language="nagpuri">नागपुरी</button>
+            <button type="button" data-language="chhattisgarhi">छत्तीसगढ़ी</button>
+          </div>
+        </div>
+        <div class="auth-area" data-auth></div>
+      </div>
+      <div class="nav-links">
+        <a class="nav-link simple-home" href="../index.html" aria-label="होम पर वापस जाएँ" data-i18n="back_home">← होम</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main class="info-page">
+
+<section class="info-hero">
+  <span class="kicker" data-i18n="contact_kicker">संपर्क</span>
+  <h1 data-i18n="contact_title">हमसे संपर्क करें</h1>
+  <p data-i18n="contact_desc">पोर्टल अभी development stage में है। आधिकारिक contact details उपलब्ध होने पर यहाँ verified जानकारी जोड़ी जाएगी।</p>
+  <span class="status-coming" data-i18n="coming_soon">Official Contact · Coming Soon</span>
+</section>
+
+<section class="info-grid">
+  <article class="info-card">
+    <h2 data-i18n="contact_general">सामान्य संपर्क</h2>
+    <p data-i18n="contact_general_desc">आधिकारिक phone number और email अभी उपलब्ध नहीं हैं।</p>
+    <span class="status-coming" data-i18n="coming_soon">Coming Soon</span>
+  </article>
+  <article class="info-card">
+    <h2 data-i18n="contact_office">कार्यालय / पता</h2>
+    <p data-i18n="contact_office_desc">Verified office address और map location बाद में जोड़े जाएंगे।</p>
+    <span class="status-coming" data-i18n="coming_soon">Coming Soon</span>
+  </article>
+  <article class="info-card">
+    <h2 data-i18n="contact_report">गलत जानकारी बताएं</h2>
+    <p data-i18n="contact_report_desc">किसी पंचायत या listing में गलती मिले तो Feedback page से सूचना भेजने की सुविधा तैयार की गई है।</p>
+    <a class="info-link" href="feedback.html" data-i18n="send_feedback">Feedback भेजें</a>
+  </article>
+</section>
+
+</main>
+
+<footer>
+  <strong data-i18n="brand_name">बगीचा ब्लॉक पोर्टल</strong>
+  <div class="site-footer-links" aria-label="सहायता और जानकारी">
+    <a href="../index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="feedback.html">Feedback</a>
+  </div>
+</footer>
+
+<script src="../js/paths.js"></script>
+<script src="../js/script.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/language.js"></script>
+</body>
+</html>

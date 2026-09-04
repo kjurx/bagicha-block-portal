@@ -1,0 +1,47 @@
+/* Advertisement Slider */
+.ad-slider{position:relative;overflow:hidden;}
+.ad-slides{position:relative;width:100%;height:100%;}
+.ad-slide{position:absolute;inset:0;display:block;opacity:0;visibility:hidden;transform:translateX(100%);text-decoration:none;z-index:1;}
+.ad-slide.active{opacity:1;visibility:visible;transform:translateX(0);z-index:2;}
+.ad-slide.slide-in-right{opacity:1;visibility:visible;transform:translateX(100%);z-index:3;}
+.ad-slide.slide-in-right.active{animation:adSlideInFromRight .55s ease forwards;}
+.ad-slide.slide-out-left{opacity:1;visibility:visible;transform:translateX(0);z-index:2;animation:adSlideOutToLeft .55s ease forwards;}
+.ad-slide.slide-in-left{opacity:1;visibility:visible;transform:translateX(-100%);z-index:3;}
+.ad-slide.slide-in-left.active{animation:adSlideInFromLeft .55s ease forwards;}
+.ad-slide.slide-out-right{opacity:1;visibility:visible;transform:translateX(0);z-index:2;animation:adSlideOutToRight .55s ease forwards;}
+
+@keyframes adSlideInFromRight{
+  from{transform:translateX(100%);opacity:1;}
+  to{transform:translateX(0);opacity:1;}
+}
+@keyframes adSlideOutToLeft{
+  from{transform:translateX(0);opacity:1;}
+  to{transform:translateX(-100%);opacity:1;}
+}
+@keyframes adSlideInFromLeft{
+  from{transform:translateX(-100%);opacity:1;}
+  to{transform:translateX(0);opacity:1;}
+}
+@keyframes adSlideOutToRight{
+  from{transform:translateX(0);opacity:1;}
+  to{transform:translateX(100%);opacity:1;}
+}
+
+@media (prefers-reduced-motion: reduce){
+  .ad-slide,
+  .ad-slide.active,
+  .ad-slide.slide-in-right,
+  .ad-slide.slide-out-left,
+  .ad-slide.slide-in-left,
+  .ad-slide.slide-out-right{
+    animation:none !important;
+    transition:none !important;
+  }
+}
+.ad-slide img{width:100%;height:100%;object-fit:contain;display:block;}
+.ad-prev,.ad-next{position:absolute;top:50%;z-index:5;width:38px;height:38px;border:0;border-radius:50%;transform:translateY(-50%);background:rgba(0,0,0,.45);color:#fff;font-size:28px;line-height:1;cursor:pointer;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);}
+.ad-prev{left:10px}.ad-next{right:10px}
+.ad-prev:hover,.ad-next:hover{background:rgba(0,0,0,.7)}
+.ad-dots{position:absolute;left:50%;bottom:10px;z-index:6;display:flex;gap:6px;transform:translateX(-50%);}
+.ad-dot{width:7px;height:7px;padding:0;border:0;border-radius:50%;background:rgba(255,255,255,.6);cursor:pointer;}
+.ad-dot.active{width:20px;border-radius:10px;background:#fff;}
