@@ -43,6 +43,22 @@ async function loadAds() {
   }
 }
 
+function adDotLabel(index) {
+  let label = 'विज्ञापन';
+  if (window.__lang) {
+    const data = window.__lang.get();
+    const lang = window.__lang.current();
+    if (data && data[lang] && data[lang].ad_label) label = data[lang].ad_label;
+  }
+  return label + ' ' + (index + 1);
+}
+
+window.__refreshDynamicLabels = () => {
+  document.querySelectorAll('.ad-dot').forEach(dot => {
+    dot.setAttribute('aria-label', adDotLabel(Number(dot.dataset.index || 0)));
+  });
+};
+
 function renderAds() {
   adSlides.innerHTML = "";
   adDots.innerHTML = "";
@@ -52,7 +68,11 @@ function renderAds() {
     const slide = document.createElement("a");
 
     slide.className = "ad-slide";
-    slide.href = ad.link || "#";
+
+    const rawLink = String(ad.link || "").trim();
+    const safeLink =
+      /^(https?:\/\/|\.\/|\/)/i.test(rawLink) ? rawLink : "#";
+    slide.href = safeLink;
 
     slide.innerHTML = `
       <img src="${escapeHTML(ad.image)}" alt="${escapeHTML(ad.alt || "विज्ञापन")}">
@@ -63,7 +83,8 @@ function renderAds() {
     const dot = document.createElement("button");
 
     dot.className = "ad-dot";
-    dot.setAttribute("aria-label", `विज्ञापन ${index + 1}`);
+    dot.dataset.index = index;
+    dot.setAttribute("aria-label", adDotLabel(index));
 
     dot.addEventListener("click", () => {
       const direction = index >= currentAd ? "next" : "prev";

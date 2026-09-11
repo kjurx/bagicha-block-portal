@@ -12,18 +12,12 @@ bagicha-block-portal/
 │   ├── contact.html              संपर्क
 │   ├── feedback.html             Feedback form
 │   ├── panchayat.html            पंचायत विवरण पेज (?name=नाम)
-│   └── auth/
-│       ├── login.html            Login पेज
-│       └── signup.html           Sign Up पेज
 ├── css/                          स्टाइलिंग अलग-अलग फ़ाइलों में (HTML से अलग)
 │   ├── style.css                 मुख्य स्टाइल
 │   ├── ad-style.css              विज्ञापन स्लाइडर स्टाइल
-│   ├── language-style.css        भाषा चयनकर्ता स्टाइल
-│   └── auth-style.css            Login/Signup + header auth स्टाइल
+│   └── language-style.css        भाषा चयनकर्ता स्टाइल
 ├── js/
 │   ├── paths.js                  SITE_BASE resolver (हर page का root path)
-│   ├── auth.js                   User login/signup logic (localStorage)
-│   ├── auth-pages.js             Login/Signup form handlers
 │   ├── script.js                 पंचायत निर्देशिका + menú
 │   ├── ad-script.js              विज्ञापन स्लाइडर
 │   ├── detail.js                 पंचायत विवरण लोड करना
@@ -50,15 +44,6 @@ python3 -m http.server 8000
 
 (इसे किसी भी होस्टिंग जैसे GitHub Pages, Netlify, या Hostinger पर अपलोड करने पर
 यह समस्या नहीं आती — वहाँ यह अपने आप ठीक से काम करेगा।)
-
-## Login / Sign Up
-
-- **Sign Up करें**: `pages/auth/signup.html` पर नाम, ईमेल और पासवर्ड डालकर खाता बनाएं।
-- **Login करें**: `pages/auth/login.html` पर ईमेल और पासवर्ड से login करें।
-- हर पेज के header में **Login / Sign Up / Logout** button दिखता है।
-- account device के browser के localStorage me save hota है (password hashed form में)।
-- **सीमा**: यह client-side demo auth है — security के लिए असली server-based auth
-  (जैसे backend + database) की ज़रूरत होगी।
 
 ## पंचायत विवरण पेज (Single Panchayat Page)
 
@@ -89,6 +74,9 @@ python3 -m http.server 8000
 - **रंग/डिज़ाइन बदलें**: `css/style.css` की शुरुआत में `:root` के अंदर रंग वेरिएबल
   (जैसे `--marigold`, `--forest`) बदलें — पूरी वेबसाइट में अपने आप लागू हो जाएगा।
 - **भाषाएँ**: `data/languages.json` में हर भाषा के लिए translations रहती हैं।
+- **नेटवर्क कवरेज**: `data/network.json` में हर पंचायत के लिए operators की सूची
+  (उदा. `"Bhitghara": ["VI 4G", "Jio 4G/5G"]`). यह इंडिकेटर सिर्फ़
+  `pages/panchayat.html` पर दिखता है। नाम `data/panchayats.json` से मिलना चाहिए।
 
 ## Development Status
 Major sections that do not yet have real data are marked **Coming Soon**.
@@ -98,4 +86,3 @@ No fake emergency/contact numbers are shown during development.
 - `about.html` — portal purpose and development status
 - `contact.html` — official contact placeholder until verified details are available
 - `feedback.html` — local feedback form; backend submission can be connected later
-- `login.html` / `signup.html` — client-side user accounts (localStorage)

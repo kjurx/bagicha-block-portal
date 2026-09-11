@@ -13,7 +13,6 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/ad-style.css">
   <link rel="stylesheet" href="css/language-style.css">
-  <link rel="stylesheet" href="css/auth-style.css">
 </head>
 
 <body>
@@ -51,7 +50,7 @@
       <!-- Main Navigation -->
       <nav class="main-nav" id="mainNav">
 
-        <!-- Language + Auth (fold into mobile menu, sit right on desktop) -->
+        <!-- Language selector (fold into mobile menu, sit right on desktop) -->
         <div class="nav-actions">
 
           <div class="language-selector" id="languageSelector">
@@ -73,16 +72,13 @@
               <button type="button" data-language="hindi">हिंदी</button>
               <button type="button" data-language="hinglish">Hinglish</button>
               <button type="button" data-language="english">English</button>
-              <button type="button" data-language="kurukh">कुड़ुख</button>
-              <button type="button" data-language="sadri">सादरी</button>
-              <button type="button" data-language="nagpuri">नागपुरी</button>
-              <button type="button" data-language="chhattisgarhi">छत्तीसगढ़ी</button>
+              <button type="button" data-language="kurukh" disabled>कुड़ुख</button>
+              <button type="button" data-language="sadri" disabled>सादरी</button>
+              <button type="button" data-language="chhattisgarhi" disabled>छत्तीसगढ़ी</button>
 
             </div>
 
           </div>
-
-          <div class="auth-area" data-auth></div>
 
         </div>
 
@@ -108,6 +104,10 @@
 
           <a href="#schemes" class="nav-link" data-i18n="schemes">
             योजनाएँ
+          </a>
+
+          <a href="#content-creator" class="nav-link" data-i18n="cc_nav">
+            कंटेंट क्रिएटर
           </a>
 
         </div>
@@ -182,7 +182,8 @@
           <a
             href="#market"
             class="btn btn-ghost"
-          >
+            data-i18n="market"
+         >
             बाजार
           </a>
 
@@ -320,23 +321,6 @@
 
         <p>
           आधिकारिक पुलिस संपर्क जानकारी जल्द उपलब्ध होगी।
-        </p>
-
-        <span class="placeholder-tag">
-          Coming Soon
-        </span>
-
-      </div>
-
-
-      <div class="card brick">
-
-        <h3>
-          फायर ब्रिगेड
-        </h3>
-
-        <p>
-          आधिकारिक फायर ब्रिगेड संपर्क जानकारी जल्द उपलब्ध होगी।
         </p>
 
         <span class="placeholder-tag">
@@ -636,6 +620,70 @@
 
 
   <!-- ===============================
+       CONTENT CREATOR
+  ================================ -->
+
+  <section id="content-creator">
+
+    <div class="section-head">
+
+      <span class="kicker" data-i18n="cc_kicker">
+        सोशल मीडिया
+      </span>
+
+      <h2 data-i18n="cc_heading">
+        कंटेंट क्रिएटर
+      </h2>
+
+      <p data-i18n="cc_desc">
+        बगीचा ब्लॉक के YouTube व सोशल मीडिया कंटेंट
+        क्रिएटर की खास जानकारी।
+      </p>
+
+    </div>
+
+
+    <div class="card-grid compact">
+
+      <div class="card marigold">
+
+        <h3 data-i18n="cc_youtube">
+          YouTube / सोशल मीडिया क्रिएटर
+        </h3>
+
+        <p data-i18n="cc_youtube_desc">
+          चैनल का नाम, लिंक और सोशल मीडिया प्रोफाइल यहाँ दिखेंगे।
+        </p>
+
+        <span class="placeholder-tag">
+          Coming Soon
+        </span>
+
+      </div>
+
+
+      <div class="card marigold">
+
+        <h3 data-i18n="cc_instagram">
+          Instagram
+        </h3>
+
+        <p data-i18n="cc_instagram_desc">
+          Instagram प्रोफाइल का नाम और लिंक यहाँ दिखेंगे।
+        </p>
+
+        <span class="placeholder-tag">
+          Coming Soon
+        </span>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ===============================
        PANCHAYAT DIRECTORY
   ================================ -->
 
@@ -709,7 +757,7 @@
 
     यह एक शुरुआती (starter) वेबसाइट है।
     असली संपर्क नंबर, दुकान और समाचार की जानकारी
-    नंबर जोड़ दी जाएगी।
+    जोड़कर इसे पूरा करें।
 
     <div class="site-footer-links" aria-label="सहायता और जानकारी">
       <a href="pages/about.html">About</a>
@@ -731,8 +779,6 @@
   <script src="js/ad-script.js"></script>
 
   <script src="js/language.js"></script>
-
-  <script src="js/auth.js"></script>
 
 </body>
 

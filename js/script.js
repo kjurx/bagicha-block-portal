@@ -42,6 +42,13 @@ const searchEl = document.getElementById('panchayatSearch');
 if (grid && countEl && searchEl) {
   var SITE = window.SITE_BASE || './';
 
+  function esc(s) {
+    return String(s)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;').replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
   function render(list) {
     if (!grid || !countEl) return;
     grid.innerHTML = '';
@@ -55,7 +62,7 @@ if (grid && countEl && searchEl) {
       const row = document.createElement('a');
       row.className = 'panchayat-row';
       row.href = SITE + 'pages/panchayat.html?name=' + encodeURIComponent(item.name);
-      row.innerHTML = `<span class="panchayat-num">${item.i}</span><span class="panchayat-name">${item.name}</span>`;
+      row.innerHTML = `<span class="panchayat-num">${item.i}</span><span class="panchayat-name">${esc(item.name)}</span>`;
       frag.appendChild(row);
     });
     grid.appendChild(frag);

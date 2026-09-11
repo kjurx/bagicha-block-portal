@@ -63,3 +63,13 @@
   color:var(--marigold);
   outline:none;
 }
+
+.language-menu button:disabled{
+  opacity:.45;
+  cursor:not-allowed;
+  color:rgba(246,240,225,.5);
+}
+.language-menu button:disabled:hover{
+  background:transparent;
+  color:rgba(246,240,225,.5);
+}

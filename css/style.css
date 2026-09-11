@@ -212,7 +212,7 @@ nav.main-nav a.nav-link:focus-visible{
     font-size:.94rem;
   }
 
-  /* Language + auth stack into the menu on mobile */
+  /* Language + selector stack into the menu on mobile */
   .nav-actions{
     flex-direction:column;
     align-items:stretch;
@@ -232,11 +232,6 @@ nav.main-nav a.nav-link:focus-visible{
   .nav-actions .language-button{
     width:100%;
     min-height:44px;
-  }
-
-  .nav-actions .auth-area{
-    justify-content:center;
-    flex-wrap:nowrap;
   }
 }
 
@@ -274,7 +269,6 @@ nav.main-nav a.nav-link:focus-visible{
   margin-bottom:16px;
   font-weight:800;
 }
-.hero h1 span{ color: var(--marigold); }
 .hero p.lede{
   color: var(--cream-dim);
   font-size:1.08rem;
@@ -308,32 +302,6 @@ nav.main-nav a.nav-link:focus-visible{
 .btn:hover{ transform: translateY(-1px); filter:brightness(1.08); }
 .btn-primary{ background: var(--marigold); color: var(--forest); }
 .btn-ghost{ background: transparent; color: var(--cream); border:1px solid var(--line); }
-
-.hero-stat-card{
-  background: rgba(246,240,225,0.05);
-  border:1px solid var(--line);
-  border-radius:14px;
-  padding:26px;
-  backdrop-filter: blur(2px);
-}
-.hero-stat-card .num{
-  font-family:'Baloo 2', sans-serif;
-  font-size:3rem;
-  font-weight:800;
-  color: var(--marigold);
-  line-height:1;
-}
-.hero-stat-card .label{
-  color: var(--cream-dim);
-  margin-top:6px;
-  font-size:0.95rem;
-}
-.hero-stat-card hr{
-  border:none; border-top:1px solid var(--line); margin:18px 0;
-}
-.hero-stat-card .mini{
-  display:flex; justify-content:space-between; font-size:0.88rem; color:var(--cream-dim); padding:6px 0;
-}
 
 /* ===== Ad Banner Slot ===== */
 .ad-banner-slot{
@@ -469,6 +437,9 @@ section + section{ border-top:1px solid rgba(32,36,29,0.08); }
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   gap:18px;
 }
+.card-grid.compact{
+  grid-template-columns: repeat(auto-fill, minmax(230px, 280px));
+}
 .card{
   background: #fff;
   border:1px solid rgba(32,36,29,0.08);
@@ -512,20 +483,12 @@ footer strong{ color: var(--cream); }
 
 /* ===== Panchayat Detail Page ===== */
 .detail-hero{
+  position:relative;
   background: var(--forest);
   color: var(--cream);
-  padding: 40px 20px 48px;
+  padding: 8px 20px 44px;
   border-bottom: 1px solid var(--line);
 }
-.detail-hero .back-link{
-  display:inline-block;
-  font-size:0.85rem;
-  color: var(--cream-dim);
-  text-decoration:none;
-  margin-bottom:18px;
-  max-width:1100px;
-}
-.detail-hero .back-link:hover{ color: var(--marigold); }
 #detailHeroContent{
   max-width:1100px;
   margin:0 auto;
@@ -534,6 +497,7 @@ footer strong{ color: var(--cream); }
   font-size: clamp(1.8rem, 4vw, 2.6rem);
   font-weight:800;
 }
+#detailHeroContent .eyebrow{ margin-bottom:6px; }
 .card.leaf-card{ border-top-color: var(--leaf); }
 .card .mini{
   display:flex;
@@ -546,7 +510,6 @@ footer strong{ color: var(--cream); }
 .card .mini:last-child{ border-bottom:none; }
 .card .mini span:first-child{ color:#7a7a6a; }
 .card .mini span:last-child{ font-weight:600; }
-.card h3{ margin-bottom:10px; }
 .highlight-list{
   list-style:none;
   display:flex;
@@ -756,7 +719,7 @@ footer strong{ color: var(--cream); }
   outline:none;
 }
 
-/* On simple pages, language + auth live in a dropdown like the main pages */
+/* Simple pages header: homel link sits like main pages' nav */
 .simple-page .brand{
   flex:1 1 auto;
   min-width:0;
@@ -783,78 +746,53 @@ footer strong{ color: var(--cream); }
   }
 }
 
-
-
-/* ===== Panchayat directory back button ===== */
-.panchayat-back-btn{
-  display:inline-flex;
+/* ===== Network coverage indicator (panchayat.html) ===== */
+.network-indicator{
+  position:absolute;
+  top:12px;
+  right:16px;
+  z-index:5;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  gap:5px;
+  background:transparent;
+  pointer-events:none;
+}
+.net-title{
+  font-size:.62rem;
+  font-weight:800;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:rgba(246,240,225,.95);
+  background:transparent;
+}
+.net-list{
+  display:flex;
   align-items:center;
-  justify-content:center;
-  gap:9px;
-  min-height:46px;
-  width:max-content;
-  max-width:100%;
-  box-sizing:border-box;
-  margin:0 0 24px;
-  padding:11px 18px;
-  border:1.5px solid var(--marigold);
-  border-radius:12px;
-  background:var(--forest);
+  gap:8px;
+  background:transparent;
+}
+.net-badge{
+  display:inline-block;
+  padding:0;
+  border:none;
+  border-radius:0;
+  background:transparent;
   color:var(--cream);
-  text-decoration:none;
-  font-size:.95rem;
+  font-size:.49rem;
   font-weight:700;
-  line-height:1.25;
-  box-shadow:0 6px 16px rgba(0,0,0,.14);
-  transition:transform .18s ease, background .18s ease, box-shadow .18s ease;
-}
-.panchayat-back-btn:hover{
-  background:#285f43;
-  transform:translateY(-1px);
-  box-shadow:0 8px 18px rgba(0,0,0,.18);
-}
-.panchayat-back-btn:active{
-  transform:translateY(1px);
-  box-shadow:0 3px 8px rgba(0,0,0,.12);
-}
-.panchayat-back-btn:focus-visible{
-  outline:2px solid var(--marigold);
-  outline-offset:3px;
+  line-height:1;
+  white-space:nowrap;
 }
 @media (max-width:480px){
-  .panchayat-back-btn{
-    min-height:46px;
-    padding:10px 15px;
-    font-size:.88rem;
+  .network-indicator{
+    top:6px;
+    right:8px;
+    gap:5px;
   }
 }
 
-/* Final override: Panchayat return link must look like a button */
-a.back-link.panchayat-back-btn{
-  display:inline-flex !important;
-  align-items:center !important;
-  justify-content:center !important;
-  width:max-content !important;
-  min-height:46px !important;
-  padding:11px 18px !important;
-  margin:0 0 24px !important;
-  box-sizing:border-box !important;
-  border:1.5px solid var(--marigold) !important;
-  border-radius:12px !important;
-  background:var(--forest) !important;
-  color:var(--cream) !important;
-  text-decoration:none !important;
-  font-weight:700 !important;
-  line-height:1.25 !important;
-  box-shadow:0 6px 16px rgba(0,0,0,.14) !important;
-}
-a.back-link.panchayat-back-btn:hover{
-  background:#285f43 !important;
-}
-@media (max-width:480px){
-  a.back-link.panchayat-back-btn{
-    min-height:46px !important;
-    padding:10px 15px !important;
-    font-size:.88rem !important;
-  }
-}
+
+
+

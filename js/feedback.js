@@ -3,14 +3,6 @@ const form = document.getElementById("feedbackForm");
 const success = document.getElementById("feedbackSuccess");
 
 if (form && success) {
-  const nameInput = document.getElementById("feedbackName");
-  if (nameInput && window.currentUser) {
-    const user = window.currentUser();
-    if (user && user.name && !nameInput.value) {
-      nameInput.value = user.name;
-    }
-  }
-
   form.addEventListener("submit", (event) => {
     event.preventDefault();
 

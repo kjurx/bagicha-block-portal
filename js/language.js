@@ -5,6 +5,11 @@
 let currentLanguage = localStorage.getItem("bagichaLanguage") || "hindi";
 let languageData = {};
 
+window.__lang = {
+  get: () => languageData,
+  current: () => currentLanguage
+};
+
 async function loadLanguages() {
   try {
     const response = await fetch((window.SITE_BASE || './') + "data/languages.json");
@@ -14,7 +19,6 @@ async function loadLanguages() {
       currentLanguage = "hindi";
       localStorage.setItem("bagichaLanguage", "hindi");
     }
-    console.log("Languages loaded:", languageData);
   } catch (error) {
     console.error("Language loading error:", error);
   }
@@ -54,7 +58,7 @@ function applyLanguage(lang) {
   const translations = languageData[lang];
   if (!translations) return;
 
-  const langMap = { hindi: 'hi', english: 'en', hinglish: 'hi', kurukh: 'sat', sadri: 'sat', nagpuri: 'sat', chhattisgarhi: 'hi' };
+  const langMap = { hindi: 'hi', english: 'en', hinglish: 'hi', kurukh: 'sat', sadri: 'sat', chhattisgarhi: 'hi' };
   document.documentElement.lang = langMap[lang] || 'hi';
 
   document.querySelectorAll("[data-i18n]").forEach(el => {
@@ -70,6 +74,9 @@ function applyLanguage(lang) {
       el.setAttribute("aria-label", translations[key]);
     }
   });
+
+  if (window.__refreshDynamicLabels) window.__refreshDynamicLabels();
+  if (window.__refreshNetworkLabel) window.__refreshNetworkLabel();
 }
 
 loadLanguages().then(() => {

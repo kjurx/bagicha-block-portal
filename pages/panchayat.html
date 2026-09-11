@@ -9,7 +9,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css">
 <link rel="stylesheet" href="../css/language-style.css">
-<link rel="stylesheet" href="../css/auth-style.css">
 </head>
 <body>
 
@@ -40,7 +39,7 @@
       <!-- Main Navigation -->
       <nav class="main-nav" id="mainNav">
 
-        <!-- Language + Auth (fold into mobile menu, sit right on desktop) -->
+        <!-- Language selector (fold into mobile menu, sit right on desktop) -->
         <div class="nav-actions">
 
           <div class="language-selector" id="languageSelector">
@@ -62,16 +61,13 @@
               <button type="button" data-language="hindi">हिंदी</button>
               <button type="button" data-language="hinglish">Hinglish</button>
               <button type="button" data-language="english">English</button>
-              <button type="button" data-language="kurukh">कुड़ुख</button>
-              <button type="button" data-language="sadri">सादरी</button>
-              <button type="button" data-language="nagpuri">नागपुरी</button>
-              <button type="button" data-language="chhattisgarhi">छत्तीसगढ़ी</button>
+              <button type="button" data-language="kurukh" disabled>कुड़ुख</button>
+              <button type="button" data-language="sadri" disabled>सादरी</button>
+              <button type="button" data-language="chhattisgarhi" disabled>छत्तीसगढ़ी</button>
 
             </div>
 
           </div>
-
-          <div class="auth-area" data-auth></div>
 
         </div>
 
@@ -98,6 +94,10 @@
             योजनाएँ
           </a>
 
+          <a href="../index.html#content-creator" class="nav-link" data-i18n="cc_nav">
+            कंटेंट क्रिएटर
+          </a>
+
         </div>
 
       </nav>
@@ -107,7 +107,7 @@
   </header>
 
 <section class="detail-hero">
-  <a href="../index.html#panchayats" class="back-link panchayat-back-btn" data-i18n="back_panchayats"> वापस जाएँ</a>
+  <div class="network-indicator" id="networkIndicator" aria-live="polite"></div>
   <div id="detailHeroContent">
     <span class="eyebrow" id="detailKicker" data-i18n="panchayat_label">पंचायत</span>
     <h1 id="detailName">लोड हो रहा है...</h1>
@@ -135,6 +135,6 @@
 <script src="../js/script.js"></script>
 <script src="../js/detail.js"></script>
 <script src="../js/language.js"></script>
-<script src="../js/auth.js"></script>
+<script src="../js/network.js"></script>
 </body>
 </html>

@@ -30,12 +30,16 @@ if (!nameEl || !bodyEl) {
     fetch((window.SITE_BASE || './') + 'data/panchayats.json').then(r => r.json()),
     fetch((window.SITE_BASE || './') + 'data/panchayat-details.json').then(r => r.json()).catch(() => ({}))
   ]).then(([names, details]) => {
+    const matchingName = names.find(n => n.toLowerCase() === panchayatName.toLowerCase());
+    const canonicalName = matchingName || panchayatName;
     const idx = names.findIndex(n => n.toLowerCase() === panchayatName.toLowerCase());
     if (kickerEl) {
       kickerEl.textContent = idx >= 0 ? ('पंचायत #' + (idx + 1)) : 'पंचायत';
     }
 
-    const info = details[panchayatName];
+    nameEl.textContent = canonicalName;
+
+    const info = details[canonicalName];
 
     if (!info) {
       bodyEl.innerHTML = `
@@ -45,7 +49,7 @@ if (!nameEl || !bodyEl) {
         </div>
         <div class="fill-banner">
           इस पंचायत की जानकारी अभी उपलब्ध नहीं है। data/panchayat-details.json में
-          "${escapeHTML(panchayatName)}" के नाम से एक एंट्री जोड़कर जानकारी भरी जा सकती है।
+          "${escapeHTML(canonicalName)}" के नाम से एक एंट्री जोड़कर जानकारी भरी जा सकती है।
         </div>
         <p class="mt-20"><a
         class="directory-back-link"
